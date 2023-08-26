@@ -1,8 +1,11 @@
-import React from "react";
+import React from "react"
+
 
 const MovieDetails = () => {
   return (
-    <div>MovieDetails</div>
+    <div>
+movie
+    </div>
   )
 }
 export default MovieDetails
