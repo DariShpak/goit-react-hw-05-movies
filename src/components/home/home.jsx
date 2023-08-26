@@ -1,10 +1,41 @@
-import React from "react"
+import {useState, useEffect} from "react"
+import {getTrendingMovies} from "fetches/FetchTrendings"
+
+import MovieCard from "components/movieCardHome/movieCardHome"
+import {Ul, Wrapper} from "./home.styled"
 
 const Home = () => {
-  return (
-    <div>HomePage</div>
-  )
+  const [trendings, setTrendings] = useState([])
 
+  useEffect(() => {
+    fetchTrendings()
+  }, [])
+
+  const fetchTrendings = async () => {
+    try {
+      const response = await getTrendingMovies()
+      const newTrendings = response.data.results
+      setTrendings([...newTrendings])
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  return (
+    <Wrapper>
+      <Ul>
+        {trendings &&
+          trendings.map(({id, title, poster_path}) =>
+            <MovieCard
+              key={id}
+              title={title}
+              alt={title}
+              poster_path={poster_path}
+            />
+          )}
+      </Ul>
+    </Wrapper>
+  )
 }
 
 export default Home
