@@ -1,6 +1,6 @@
 import React from "react"
 import {Container, Header, Nav, Ul, Li, NaviLink} from "./header.styled"
-import {ReactComponent as LogoIcon} from "icons/cinema-hd-svgrepo-com.svg"
+// import {ReactComponent as LogoIcon} from "icons/cinema-hd-svgrepo-com.svg"
 
 
 const HeaderBar = () => {
@@ -14,9 +14,9 @@ const HeaderBar = () => {
             <Li>
               <NaviLink to="/movies">Movies</NaviLink>
             </Li>
-            <NaviLink to="/">
+            {/* <NaviLink to="/">
               <LogoIcon width="80" height="60" />
-            </NaviLink>
+            </NaviLink> */}
           </Ul>
         </Nav>
       </Header>
