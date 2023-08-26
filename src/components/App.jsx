@@ -1,17 +1,19 @@
 import React from "react"
 import {Routes, Route} from "react-router-dom"
 
-import Home from "./pages/Home"
+
 import Movies from "./pages/Movies"
 import MovieDetails from "./pages/MovieDetails"
 import Cast from "./pages/Cast"
 import Reviews from "./pages/Reviews"
 import SharedLayout from "./SharedLayout/SharedLayout"
+import HomePage from "./pages/Home"
+
 
 export const App = () => {
   return <Routes>
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<Home />} />
+        <Route index element={<HomePage />} />
         <Route path="movies" element={<Movies />} />
         <Route path="movies/:movieId" element={<MovieDetails />} />
         <Route path="movies/:movieId/cast" element={<Cast />} />
