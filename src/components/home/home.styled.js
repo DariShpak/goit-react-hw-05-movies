@@ -25,3 +25,10 @@ padding:0px;
   gap: 32px;
   margin: 0;
 `
+export const H1 = styled.h1`color: #ebecf0;
+         font-size: 18px;
+         text-align: center;
+         margin-top: 0;
+         margin-bottom: 20px;
+         font-weight: 500;
+         text-transform: uppercase;`
