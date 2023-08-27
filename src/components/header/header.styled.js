@@ -33,6 +33,13 @@ export const Li = styled.li`
   background-color: #99eeee;
   background-color: rgba(153, 238, 238, 0.2);
   border-radius: 20px;
+
+  &: focus,
+  &: hover,
+   &: active {
+    background-color: #99dddd;
+    background-color: rgba(153, 221, 221, 0.6);
+  }
 `
 
 export const NaviLink = styled(NavLink)`
@@ -41,5 +48,11 @@ color: #ebecf0;
 font-size: 16px;
 font-weight: 500;
 text-transform: uppercase;
+
+&.active {
+
+text-shadow: 3px 3px 10px #d7c6cf,
+    -2px 1px 10px #ff99cc;
+         }
 
 `
