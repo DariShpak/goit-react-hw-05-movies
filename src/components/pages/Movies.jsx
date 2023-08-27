@@ -1,9 +1,9 @@
 import React from "react";
-
+import MoviesSearch from "components/movies/movies";
 
 const Movies = () => {
   return <div>
-      Movies
+      <MoviesSearch />
 
     </div>
 }
