@@ -14,8 +14,6 @@ padding-right: 20px;
 
 export const Span = styled.span`text-align: center;`
 
-export const Text = styled.p`
-  color: #ebecf0;
-  font-weight: 400;
-  font-size: 12px;
-`
+export const Text = styled.p`color: #ffffff;
+         font-weight: 400;
+         font-size: 12px;`
