@@ -12,12 +12,15 @@ export const Section = styled.section`
 
 export const Form = styled.form`
 display: flex;
-justify-content: center;`
+gap: 18px;
+justify-content: center;
+align-items: center;`
 
 export const Input = styled.input`
   width: 630px;
   height: 49px;
   border-radius: 30px;
+
   font-size: 14px;
   font-weight: 500;
   padding-top: 8px;
@@ -36,6 +39,8 @@ export const Input = styled.input`
     background-color: #99dddd;
     background-color: rgba(153, 221, 221, 0.6);
   }
+
+
 `
 
 export const Wrapper = styled.div`
@@ -63,3 +68,15 @@ export const MovieList = styled.ul`
   gap: 32px;
   margin: 0;
 `
+export const Button = styled.button`outline: transparent;
+cursor: pointer;
+         border: none;
+         border-radius: 50px;
+         width: 30px;
+         height: 29px;
+         outline: transparent;
+font-size:12px;
+         color: #ebecf0;
+         background-color: #99eeee;
+         background-color: rgba(153, 238, 238, 0.4);`
+  
