@@ -24,27 +24,23 @@ export const Ul = styled.ul`
   padding: 0;
 `
 
-export const Li = styled.li`
-  width: 80px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #99eeee;
-  background-color: rgba(153, 238, 238, 0.2);
-  border-radius: 20px;
+export const Li = styled.li`width: 80px;
+         height: 30px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         // background-color: #99eeee;
+         // background-color: rgba(153, 238, 238, 0.2);
+         // border-radius: 20px;
 
-  &: focus,
-  &: hover,
-   &: active {
-    background-color: #99dddd;
-    background-color: rgba(153, 221, 221, 0.6);
-  }
-`
+          &: focus,
+          &: hover {
+         text-shadow: 3px 3px 10px #d7c6cf, -2px 1px 10px #ff99cc;
+          }`
 
 export const NaviLink = styled(NavLink)`
 text-decoration: none;
-color: #ebecf0;
+color: 	#ffffff;
 font-size: 16px;
 font-weight: 500;
 text-transform: uppercase;
