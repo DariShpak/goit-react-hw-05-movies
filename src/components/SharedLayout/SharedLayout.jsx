@@ -5,9 +5,11 @@ import Footer from "components/footer/footer"
 
 const SharedLayout = () => {
   return <>
-    <HeaderBar/>
-    <Outlet />
-    <Footer/>
+    <HeaderBar />
+    <main>
+      <Outlet />
+    </main>
+       <Footer/>
   </>
 }
 
