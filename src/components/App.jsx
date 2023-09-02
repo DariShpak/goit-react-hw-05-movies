@@ -1,25 +1,28 @@
 import React from "react"
 import {Routes, Route} from "react-router-dom"
 
-
-import Movies from "./pages/Movies"
-import MovieDetails from "./pages/MovieDetails"
-import Cast from "./pages/Cast"
-import Reviews from "./pages/Reviews"
-import SharedLayout from "./SharedLayout/SharedLayout"
-import Home from "./pages/Home"
-
+import Movies from "./pages/moviesPage"
+import MovieDetails from "./pages/movieDetailsPage"
+import Cast from "components/cast/cast"
+import Reviews from "components/reviews/reviews"
+import SharedLayout from "./sharedLayout/sharedLayout"
+import Home from "./pages/homePage"
 
 export const App = () => {
-  return <Routes>
+  return (
+    <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:movieId" element={<MovieDetails/>} />
-        <Route path="/movies/:movieId/cast" element={<Cast />} />
-        <Route path="/:movieId/reviews" element={<Reviews />} />
+        <Route path="movies" element={<Movies />} />
+        <Route path="movies/:movieId" element={<MovieDetails />}>
+          <Route path="cast" element={<Cast />} />
+          <Route path="reviews" element={<Reviews />} />
+        </Route>
+
+        {/* <Route path="*" element={<NotFound />} /> */}
       </Route>
     </Routes>
+  )
 }
 
 // '/' – компонент Home, домашня сторінка зі списком популярних кінофільмів.
