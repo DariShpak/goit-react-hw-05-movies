@@ -7,3 +7,5 @@ export const Main = styled.main`
   display: flex;
   justify-content: center;
 `
+export const Container = styled.div`
+`
