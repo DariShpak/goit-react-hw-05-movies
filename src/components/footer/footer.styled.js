@@ -5,7 +5,7 @@ padding-left:20px;
 padding-right: 20px;
   background: rgba(153, 170, 170, 0.2);
   border-top: 1px solid #99dddd;
-  height: 100px;
+  height: auto;
   display: flex;
   justify-content: center;
   padding-top: 15px;
