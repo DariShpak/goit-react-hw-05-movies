@@ -1,11 +1,20 @@
 import styled from "styled-components"
 
 export const Main = styled.main`
-  padding-left: 20px;
-  min-height: 77vh;
+  min-height: 72vh;
   padding-right: 20px;
-  display: flex;
-  justify-content: center;
+  padding-left: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
 `
 export const Container = styled.div`
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: var(--font-family);
+  line-height: var(--typical-lh);
+  color: var(--text-color);
+  text-shadow: var(--text-shadow);
 `
