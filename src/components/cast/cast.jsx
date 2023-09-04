@@ -2,14 +2,15 @@ import {useState, useEffect} from "react"
 import getCast from "fetches/fetchCast"
 import {useParams} from "react-router-dom"
 import CastItem from "./castItem"
-import { LoaderIcon } from "components/loader/loader"
-import { CastWrapper, CastList} from "./cast.styled"
+import {LoaderIcon} from "components/loader/loader"
+import {CastWrapper, CastList} from "./cast.styled"
+import ErrorSection from "components/error/error"
 
 const Cast = () => {
   const {movieId} = useParams()
   const [cast, setCast] = useState([])
   const [isLoading, setIsLoading] = useState(false)
-
+  const [error, setError] = useState(null)
 
   useEffect(
     () => {
@@ -20,8 +21,9 @@ const Cast = () => {
           const newCast = castData.data.cast
 
           setCast([...newCast])
+          setError(null)
         } catch (error) {
-          console.log(error)
+          setError(error)
         } finally {
           setIsLoading(false)
         }
@@ -34,6 +36,7 @@ const Cast = () => {
   return (
     <CastWrapper>
       {isLoading && <LoaderIcon />}
+      {error && <ErrorSection error={error} />}
       <CastList>
         {cast &&
           cast.map(({id, name, profile_path}) =>
