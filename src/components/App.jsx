@@ -5,7 +5,7 @@ import Movies from "../pages/moviesPage"
 import MovieDetails from "../pages/movieDetailsPage"
 import Cast from "components/cast/cast"
 import Reviews from "components/reviews/reviews"
-import SharedLayout from "components/sharedLayout/SharedLayout"
+import SharedLayout from "./sharedLayoutComponent/sharedLayout"
 import Home from "../pages/homePage"
 import NotFound from "pages/notFoundPage"
 
