@@ -1,6 +1,6 @@
 import React from "react"
 import {Link} from "react-router-dom"
-import MovieListItem from "components/movieListItem/movieListItem"
+import MovieList from "components/movieList/movieList"
 import {H1, Wrapper, Ul} from "./home.styled"
 import PropTypes from "prop-types"
 
@@ -12,7 +12,7 @@ const HomeIntro = ({trendings}) => {
         {trendings &&
           trendings.map(({id, title, poster_path}) =>
             <Link to={`/movies/${id}`} key={id}>
-              <MovieListItem title={title} alt={title} poster={poster_path} />
+              <MovieList title={title} alt={title} poster={poster_path} />
             </Link>
           )}
       </Ul>
