@@ -13,6 +13,7 @@ import {
   List,
   GenresItem
 } from "components/movieDetailsItem/movieDetailsItem.styled"
+import { IMG_PATH } from "utils/IMG_PATH"
 
 const MovieDetailsItem = () => {
   const {movieId} = useParams()
@@ -22,6 +23,12 @@ const MovieDetailsItem = () => {
 
   const allGenres = genres.map(genre => genre.name)
 
+    const defaultPoster = "https://www.movienewz.com/img/films/poster-holder.jpg"
+
+    const handleImageError = event => {
+      event.target.src = defaultPoster
+    }
+  
   useEffect(
     () => {
       const fetchMovieDetails = async () => {
@@ -54,11 +61,12 @@ const MovieDetailsItem = () => {
     <Wrapper>
       {isLoading && <LoaderIcon />}
       <Img
-        src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+        src={`${IMG_PATH}${movieDetails.poster_path}`}
         alt={movieDetails.title}
         width="280"
         height="421"
         loading="lazy"
+        onError={handleImageError}
       />
       <TextBlock>
         <Title>
