@@ -89,7 +89,7 @@ const MoviesComponent = () => {
           <Ul>
           {movies &&
             movies.map(({id, title, poster_path}) =>
-              <Link key={id} to={`/movies/${id}`}>
+              <Link key={id} to={`${id}`}>
                 <MovieList key={id} title={title} poster={poster_path} />
               </Link>
             )}
