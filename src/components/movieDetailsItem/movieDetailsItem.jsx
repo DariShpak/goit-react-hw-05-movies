@@ -11,11 +11,13 @@ import {
   TextBlock,
   Tagline,
   List,
-  GenresItem
+  GenresItem,
+  
 } from "components/movieDetailsItem/movieDetailsItem.styled"
 import {IMG_PATH} from "utils/IMG_PATH"
 
 const MovieDetailsItem = () => {
+
   const {movieId} = useParams()
   const [movieDetails, setMovieDetails] = useState({})
   const [genres, setGenres] = useState([])
@@ -60,6 +62,7 @@ const MovieDetailsItem = () => {
   return (
     <Wrapper>
       {isLoading && <LoaderIcon />}
+
       <Img
         src={`${IMG_PATH}${movieDetails.poster_path}`}
         alt={movieDetails.title}
