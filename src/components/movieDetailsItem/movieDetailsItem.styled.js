@@ -4,17 +4,15 @@ export const Wrapper = styled.div`
   padding: 40px;
   display: flex;
   gap: 40px;
-
-  margin-top: 40px;
   margin-bottom: 40px;
 
   margin-left: auto;
   margin-right: auto;
   max-width: 980px;
   height: 100%;
-  background-color: #99eeee;
-  background-color: rgba(153, 238, 238, 0.2);
-  border-radius: 20px;
+
+  background-color: var(--section-background);
+  border-radius: var(--border-radius);
 `
 
 export const Title = styled.h1`
@@ -114,5 +112,21 @@ export const StyledLink = styled.p`
 
 export const Section = styled.section`
   display: flex;
+
   flex-direction: column;
+
+`
+export const Button = styled.button`
+  outline: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+  width: 80px;
+  height: 40px;
+  padding: 8px;
+  outline: transparent;
+  font-size: 12px;
+  background-color: var(--section-background);
+margin-bottom:20px;
+margin-top: 20px;
 `
