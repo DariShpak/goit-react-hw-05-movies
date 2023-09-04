@@ -1,7 +1,7 @@
 import React from "react"
 import {useParams} from "react-router-dom"
 import {useState, useEffect} from "react"
-import getMovieDetails from "fetches/fetchMovieDetails"
+import getMovieDetails from "utils/fetches/fetchMovieDetails"
 import {LoaderIcon} from "components/loader/loader"
 import {
   Wrapper,
@@ -13,7 +13,7 @@ import {
   List,
   GenresItem
 } from "components/movieDetailsItem/movieDetailsItem.styled"
-import { IMG_PATH } from "utils/IMG_PATH"
+import {IMG_PATH} from "utils/IMG_PATH"
 
 const MovieDetailsItem = () => {
   const {movieId} = useParams()
@@ -23,12 +23,12 @@ const MovieDetailsItem = () => {
 
   const allGenres = genres.map(genre => genre.name)
 
-    const defaultPoster = "https://www.movienewz.com/img/films/poster-holder.jpg"
+  const defaultPoster = "https://www.movienewz.com/img/films/poster-holder.jpg"
 
-    const handleImageError = event => {
-      event.target.src = defaultPoster
-    }
-  
+  const handleImageError = event => {
+    event.target.src = defaultPoster
+  }
+
   useEffect(
     () => {
       const fetchMovieDetails = async () => {

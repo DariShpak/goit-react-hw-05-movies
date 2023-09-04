@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react"
-import getCast from "fetches/fetchCast"
+import getCast from "utils/fetches/fetchCast"
 import {useParams} from "react-router-dom"
 import CastItem from "./castItem"
 import {LoaderIcon} from "components/loader/loader"

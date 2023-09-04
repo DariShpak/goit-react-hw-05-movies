@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react"
 import {useParams} from "react-router-dom"
 import ReviewItem from "./reviewItem"
-import getMovieReviews from "fetches/fetchReviews"
+import getMovieReviews from "utils/fetches/fetchReviews"
 import {LoaderIcon} from "components/loader/loader"
 import {ReviewsSection, ReviewsList} from "./reviews.styled"
 import ErrorSection from "components/error/error"
@@ -32,7 +32,6 @@ const Reviews = () => {
           }
         } catch (error) {
           setError(error)
-          
         } finally {
           setHasMore(false)
           setIsLoading(false)

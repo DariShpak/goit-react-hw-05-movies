@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react"
-import getTrendingMovies from "fetches/fetchTrendings"
+import getTrendingMovies from "utils/fetches/fetchTrendings"
 import { LoaderIcon } from "components/loader/loader"
  import HomeIntro from "components/home/homeComponent"
 
