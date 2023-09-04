@@ -27,7 +27,7 @@ const Reviews = () => {
             setError("Oooops, there are no reviews yet")
             setReviews([])
           } else {
-            setReviews(prevReviews => [...prevReviews, ...reviewData])
+            setReviews([...reviewData])
             setError(null)
           }
         } catch (error) {
@@ -57,15 +57,15 @@ const Reviews = () => {
         style={{overflow: "hidden"}}
         hasMore={hasMore}
         loader={isLoading && <LoaderIcon />}
-      />
-
-      <ReviewsList>
-        {reviews.length > 0
-          ? reviews.map(({id, author, content}) =>
-              <ReviewItem key={id} author={author} content={content} />
-            )
-          : null}
-      </ReviewsList>
+      >
+        <ReviewsList>
+          {reviews.length > 0
+            ? reviews.map(({id, author, content}) =>
+                <ReviewItem key={id} author={author} content={content} />
+              )
+            : null}
+        </ReviewsList>
+      </InfiniteScroll>
     </ReviewsSection>
   )
 }
