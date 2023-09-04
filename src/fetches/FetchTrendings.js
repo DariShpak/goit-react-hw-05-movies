@@ -11,7 +11,7 @@ const getTrendingMovies = async () => {
 
     return response
   } catch (error) {
-    console.error("Error fetching cast:", error)
+    console.error("Error fetching movies:", error)
     throw error
   }
 }
