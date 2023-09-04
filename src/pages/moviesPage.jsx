@@ -1,14 +1,14 @@
 import React from "react"
-import MoviesComponent from "components/movies/moviesComponent"
+import MoviesList from "components/moviesList/moviesList"
+import {Section} from "components/moviesList/moviesList.styled"
 
 const Movies = () => {
- 
   return (
-    <>
-     <MoviesComponent />
-     </>
-
+    <Section>
+      <MoviesList />
+    </Section>
   )
 }
 
 export default Movies
+
