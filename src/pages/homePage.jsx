@@ -1,34 +1,7 @@
-import {useState, useEffect} from "react"
-import getTrendingMovies from "utils/fetches/fetchTrendings"
-import { LoaderIcon } from "components/loader/loader"
- import HomeIntro from "components/home/homeComponent"
+import React from "react"
+import TrendingsList from "components/trendingsList.jsx/trendingsList"
 
 const Home = () => {
-  const [trendings, setTrendings] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
-
-  useEffect(() => {
-    fetchTrendings()
-  }, [])
-
-  const fetchTrendings = async () => {
-    try {
-      setIsLoading(true)
-      const response = await getTrendingMovies()
-      const newTrendings = response.data.results
-      setTrendings([...newTrendings])
-    } catch (error) {
-      console.log(error)
-    } finally {
-      setIsLoading(false)
-    }
-  }
-  return (
-    <>
-      {isLoading && <LoaderIcon />}
-      <HomeIntro trendings={trendings} />
-    </>
-  )
+  return <TrendingsList />
 }
-
 export default Home
