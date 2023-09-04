@@ -1,13 +1,14 @@
 import React from "react"
-
+import { IMG_PATH } from "utils/IMG_PATH"
 import PropTypes from "prop-types"
 import {CardWrapper, H2, Img, Li} from "./movieListItem.styled"
 
 const MovieListItem = ({title, poster}) => {
   return (
-    <Li>    <CardWrapper>
+    <Li>
+      <CardWrapper>
       <Img
-        src={`https://image.tmdb.org/t/p/w500${poster}`}
+        src={`${IMG_PATH}${poster}`}
         alt={title}
         width="207"
         height="307"
