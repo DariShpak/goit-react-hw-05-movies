@@ -1,6 +1,7 @@
 import React from "react"
 import {Li, CardWrapper, Img, H2} from "./movieList.styled"
 import PropTypes from "prop-types"
+import {IMG_PATH} from "utils/IMG_PATH"
 
 const MovieList = ({title, poster}) => {
   const defaultPoster = "https://www.movienewz.com/img/films/poster-holder.jpg"
@@ -13,10 +14,10 @@ const MovieList = ({title, poster}) => {
     <Li>
       <CardWrapper>
         <Img
-          src={`https://image.tmdb.org/t/p/w500${poster}`}
+          src={`${IMG_PATH}${poster}`}
           alt={title}
-          width="197"
-          height="287"
+          width="207"
+          height="307"
           loading="lazy"
           onError={handleImageError}
         />
@@ -31,7 +32,7 @@ const MovieList = ({title, poster}) => {
 
 MovieList.propTypes = {
   title: PropTypes.string.isRequired,
-  poster: PropTypes.string,
+  poster: PropTypes.string
 }
 
 export default MovieList
