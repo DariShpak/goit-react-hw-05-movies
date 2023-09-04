@@ -1,21 +1,20 @@
 import styled from "styled-components"
 
-export const CastWrapper = styled.div`
-  max-width: 1200px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 0;
+export const CastWrapper = styled.section`
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
 `
 
 export const CastList = styled.ul`
-  margin: 0;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
-  padding-left: 0;
+  gap: 20px;
 `
 export const CastListItem = styled.li`
-  width: 120px;
+  width: 140px;
 
   display: flex;
   justify-content: center;
@@ -26,12 +25,10 @@ export const CastListItem = styled.li`
 export const Image = styled.img`
   margin-left: auto;
   margin-right: auto;
-  display: block;
-  border-radius: 20px;
+  border-radius: var(--border-radius);
 `
 
 export const Text = styled.p`
+  margin-top: 8px;
   font-size: 12px;
-  color: #ffffff;
-  text-shadow: 3px 4px 7px rgba(81, 67, 21, 0.8);
 `
