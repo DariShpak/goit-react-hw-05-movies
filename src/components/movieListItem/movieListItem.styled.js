@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Li = styled.li`list-style: none;`
+export const Li = styled.li``
 
 export const CardWrapper = styled.div`
   display: flex;
@@ -8,17 +8,16 @@ export const CardWrapper = styled.div`
   gap: 14px;
   width: 207px;
   height: 347px;
+  margin-bottom: 15px;
 `
 
 export const Img = styled.img`
   display: block;
-  border-radius: 20px;
+  border-radius: var(--border-radius);
 `
+
 export const H2 = styled.h2`
-  color: #ffffff;
   font-size: 18px;
   font-weight: 500;
   text-align: center;
-  margin: 0;
-  text-shadow: 3px 4px 7px rgba(81, 67, 21, 0.8);
 `
