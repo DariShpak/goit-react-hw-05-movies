@@ -1,6 +1,10 @@
 import styled from "styled-components"
 
-export const ErrorWrap = styled.div`max-width: 1000px;`
+export const ErrorWrap = styled.div`
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+`
 
 export const ErrorText = styled.h1`
   font-size: 14px;
