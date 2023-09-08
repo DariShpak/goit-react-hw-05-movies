@@ -1,6 +1,5 @@
 import styled from "styled-components"
 
-
 export const Button = styled.button`
   outline: transparent;
   cursor: pointer;
@@ -13,9 +12,13 @@ export const Button = styled.button`
   color: #ebecf0;
   background-color: #99eeee;
   background-color: rgba(153, 238, 238, 0.4);
+
+  &: focus,
+  &: hover,
+  &: active {
+    background-color: rgba(153, 221, 221, 0.7);
+  }
 `
-
-
 
 export const Form = styled.form`
   display: flex;
