@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 
   margin-left: auto;
   margin-right: auto;
-  max-width: 980px;
+  width: 1000px;
   height: 100%;
 
   background-color: var(--section-background);
@@ -74,16 +74,17 @@ export const SpanItem = styled.p`
 `
 
 export const Ul = styled.ul`
-         margin-left: auto;
-         margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 
-         display: flex;
-         align-items: center;
-         gap: 18px;
-         list-style: none;
-         margin-top: 0;
-         margin-bottom: 40px;
-         padding: 0;`
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 40px;
+  padding: 0;
+`
 
 export const Li = styled.li`
   margin-top: 0;
@@ -114,7 +115,6 @@ export const Section = styled.section`
   display: flex;
 
   flex-direction: column;
-
 `
 export const Button = styled.button`
   outline: transparent;
@@ -127,6 +127,12 @@ export const Button = styled.button`
   outline: transparent;
   font-size: 12px;
   background-color: var(--section-background);
-margin-bottom:20px;
-margin-top: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  &: focus,
+  &: hover,
+  &: active {
+    background-color: rgba(153, 221, 221, 0.6);
+  }
 `
