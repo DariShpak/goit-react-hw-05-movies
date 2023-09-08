@@ -20,9 +20,15 @@ const Cast = () => {
           const castData = await getCast(movieId)
           const newCast = castData.data.cast
 
-          setCast([...newCast])
-          setError(null)
-        } catch (error) {
+          if (newCast.length === 0) {
+            setError("Oooops, there are no cast found for this movie")
+            setCast([])
+          } else {
+            setCast([...newCast])
+            setError(null)
+          }
+        }
+        catch (error) {
           setError(error)
         } finally {
           setIsLoading(false)
