@@ -11,13 +11,11 @@ import {
   TextBlock,
   Tagline,
   List,
-  GenresItem,
-  
+  GenresItem
 } from "components/movieDetailsItem/movieDetailsItem.styled"
 import {IMG_PATH} from "utils/IMG_PATH"
 
 const MovieDetailsItem = () => {
-
   const {movieId} = useParams()
   const [movieDetails, setMovieDetails] = useState({})
   const [genres, setGenres] = useState([])
