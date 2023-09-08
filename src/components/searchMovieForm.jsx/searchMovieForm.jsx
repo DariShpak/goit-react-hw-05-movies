@@ -7,10 +7,12 @@ const MovieSearchForm = ({ onSubmit }) => {
   const query = searchParams.get('query') ?? "";
 
   const updateQueryString = event => {
-    if (event.target.value === "") {
+    const searchName = event.target.value
+    if ( searchName === "") {
      return setSearchParams({})
     } 
-      setSearchParams({query: event.target.value})  
+    setSearchParams({ query: searchName})  
+   
   }
 
   return (
@@ -20,7 +22,7 @@ const MovieSearchForm = ({ onSubmit }) => {
         name="name"
         autoComplete="off"
         placeholder="Search a movie"
-        value={query }
+        value={query}
         onChange={updateQueryString}
       />
       <Button type="submit">GO</Button>
