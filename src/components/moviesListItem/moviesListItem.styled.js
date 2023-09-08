@@ -5,12 +5,11 @@ export const Li = styled.li``
 export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 14px;
   width: 212px;
-  height: 370px;
+  height: 380px;
   margin-bottom: 15px;
   margin-top: 15px;
-padding: 4px;
+  padding: 4px;
   &: focus,
   &: hover,
   &: active {
@@ -30,4 +29,5 @@ export const H2 = styled.h2`
   font-size: 18px;
   font-weight: 500;
   text-align: center;
+  margin-bottom: 5px;
 `
