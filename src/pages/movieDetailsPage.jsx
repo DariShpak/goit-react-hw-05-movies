@@ -14,11 +14,12 @@ import {
 const MovieDetails = () => {
   const location = useLocation();
   const backLinkLocationRef = useRef(location.state?.from ?? "/movies")
-  
+
+
   return (
     <Section>
       <Button>
-        <Link to={backLinkLocationRef.current}>Go Back</Link>
+        <Link to={ backLinkLocationRef.current }>Go Back</Link>
       </Button>
 
       <MovieDetailsItem />
