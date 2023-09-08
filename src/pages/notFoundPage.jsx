@@ -1,13 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import NotFoundIntro from "components/notFound/notFoundIntro";
 
 const NotFound = () => {
-  return <section>
-      <h1>Sorry, page not found </h1>
-      <button type="button">
-      <Link to="/">Back to Home page</Link>
-      </button>
-    </section>
+ return <NotFoundIntro />
 }
 
 export default NotFound
