@@ -10,8 +10,7 @@ const Reviews = lazy(() => import("components/reviews/reviews"))
 const NotFound = lazy(() => import("pages/notFoundPage"))
 
 const App = () => {
-  return (
-    <Routes>
+  return <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />} />
         <Route path="movies" element={<Movies />} />
@@ -19,10 +18,11 @@ const App = () => {
           <Route path="cast" element={<Cast />} />
           <Route path="reviews" element={<Reviews />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Route>
-      <Route path="*" element={<NotFound />} />
     </Routes>
-  )
+
+   
 }
 
 export default App
