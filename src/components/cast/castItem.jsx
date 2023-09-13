@@ -31,6 +31,6 @@ const CastItem = ({name, photo}) => {
 
 CastItem.propTypes = {
   name: PropTypes.string.isRequired,
-  photo: PropTypes.string.isRequired,
+  photo: PropTypes.string,
 }
 export default CastItem
