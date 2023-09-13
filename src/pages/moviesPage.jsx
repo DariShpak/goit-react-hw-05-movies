@@ -17,30 +17,35 @@ const Movies = () => {
 
   const [page, setPage] = useState(1);
   const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [search, setSearch] = useState(false);
 
 
-  const handleSearchSubmit = (event) => {
+    const handleSubmit = (event) => {
     event.preventDefault();
     setSearch(true);
+    setPage(1);
   };
+
 
   const fetchMovies = useMemo(
     () => async function () {
+          if (query === "") {
+      return;
+    }
       try {
         setIsLoading(true);
         const response = await getMovieByName(query, page); 
         const newMovies = response.results;
-
-        setMovies((prevMovies) => [...prevMovies, ...newMovies]);
+       setMovies((prevMovies) => [...prevMovies, ...newMovies]);
         setPage((prevPage) => prevPage + 1);
         setSearch(false);
         setError(null);
+          
 
-        if (page === 100) {
+        if (page === 40) {
           setHasMore(false);
         }
       } catch (error) {
@@ -53,25 +58,25 @@ const Movies = () => {
     [query, page]
   );
 
-  const loadMoreMovies = () => {
+    const loadMoreMovies = () => {
     if (!search) {
-      fetchMovies();
+      fetchMovies()
+   }
     }
-  };
 
-  useEffect(() => {
+ useEffect(() => {
      if (search) {
       fetchMovies();
     }
   }, [fetchMovies, search]);
 
-
-
   return (
  <>
       <Section>
-        <MovieSearchForm onSubmit={handleSearchSubmit} />
-        { isLoading && <LoaderIcon/>}
+        <MovieSearchForm onSubmit={ handleSubmit} />
+        
+        {isLoading && <LoaderIcon />}
+        
       {error && <ErrorSection error={error} />}
 
         {movies.length > 0 && ( 
@@ -86,8 +91,8 @@ const Movies = () => {
             <Wrapper>
               <Ul>
                 {movies.map(({ id, title, poster_path }) => (
-                  <Link key={id} to={`${id}`} state={{from: location } }>
-                    <MoviesListItem title={title} poster={poster_path} />
+                  <Link key={id}  to={`${id}`} state={{from: location }}>
+                    <MoviesListItem  title={title} poster={poster_path} />
                   </Link>
                 ))}
               </Ul>
