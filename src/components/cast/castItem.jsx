@@ -1,5 +1,7 @@
 import React from "react"
-import {CastListItem, Image, Text} from "./cast.styled"
+import { CastListItem, Image, Text } from "./cast.styled"
+import { IMG_PATH } from "utils/IMG_PATH"
+import PropTypes from "prop-types"
 
 const CastItem = ({name, photo}) => {
   const defaultPhoto =
@@ -12,7 +14,7 @@ const CastItem = ({name, photo}) => {
   return (
     <CastListItem>
       <Image
-        src={`https://image.tmdb.org/t/p/w500${photo}`}
+        src={`${IMG_PATH}${photo}`}
         alt={name}
         width="100"
         height="140"
@@ -26,4 +28,9 @@ const CastItem = ({name, photo}) => {
   )
 }
 
+
+CastItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  photo: PropTypes.string.isRequired,
+}
 export default CastItem
