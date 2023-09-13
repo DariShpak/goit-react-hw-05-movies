@@ -1,12 +1,12 @@
 import React from "react"
-import { useSearchParams } from "react-router-dom"
+import {useSearchParams} from "react-router-dom"
 import {Form, Input, Button} from "./searchMovieForm.styled"
 
-const MovieSearchForm = ({ onSubmit }) => {
+const MovieSearchForm = ({onSubmit}) => {
   const [searchParams, setSearchParams] = useSearchParams()
   const query = searchParams.get('query') ?? "";
 
-  const updateQueryString = event => {
+  const handleQueryChange = event => {
     const searchName = event.target.value
     if ( searchName === "") {
      return setSearchParams({})
@@ -23,7 +23,7 @@ const MovieSearchForm = ({ onSubmit }) => {
         autoComplete="off"
         placeholder="Search a movie"
         value={query}
-        onChange={updateQueryString}
+        onChange={handleQueryChange}
       />
       <Button type="submit">GO</Button>
     </Form>
